@@ -18,18 +18,21 @@ const TopBar: React.FC<TopBarProps> = ({ isMuted, toggleMute, isLowPower, toggle
   }, []);
 
   return (
-    <div className={`fixed top-0 left-0 right-0 h-12 bg-bg-black/80 ${isLowPower ? '' : 'backdrop-blur-md'} border-b border-radar-green/20 z-[100] flex items-center justify-between px-6 font-mono text-xs text-radar-green`}>
-      <div className="flex items-center space-x-6">
+    <div className={`fixed top-0 left-0 right-0 h-12 bg-bg-black/80 ${isLowPower ? '' : 'backdrop-blur-md'} border-b border-radar-green/20 z-100 flex items-center justify-between px-4 sm:px-6 font-mono text-xs text-radar-green`}>
+      <div className="flex items-center space-x-2 sm:space-x-6">
         <div className="flex items-center space-x-2">
           <Shield size={14} className={`text-radar-green ${isLowPower ? '' : 'animate-pulse'}`} />
-          <span className="font-bold tracking-widest glow-text">TayyabLatif-OS v1.0</span>
-        </div>        {isLowPower && (
-          <div className="px-2 py-1 rounded-sm bg-yellow-500/20 border border-yellow-400 text-yellow-300 text-[10px] uppercase tracking-wider">
+          <span className="font-bold tracking-widest glow-text hidden sm:inline">TayyabLatif-OS v1.0</span>
+          <span className="font-bold tracking-widest glow-text sm:hidden">TL-OS</span>
+        </div>          <div className="px-2 py-1 rounded-sm bg-yellow-500/20 border border-yellow-400 text-yellow-300 text-[10px] uppercase tracking-wider hidden sm:block">
             LOW POWER MODE
           </div>
-        )}        <div className="flex items-center space-x-2 border-l border-radar-green/20 pl-6">
+          <div className="px-1 py-1 rounded-sm bg-yellow-500/20 border border-yellow-400 text-yellow-300 text-[8px] uppercase tracking-wider sm:hidden">
+            LPM
+          </div>        <div className="flex items-center space-x-2 border-l border-radar-green/20 pl-2 sm:pl-6">
           <Signal size={14} />
-          <span className="uppercase tracking-tighter">Status: ACTIVE</span>
+          <span className="uppercase tracking-tighter hidden sm:inline">Status: ACTIVE</span>
+          <span className="uppercase tracking-tighter sm:hidden">ACTIVE</span>
           {!isLowPower && (
             <motion.div 
               className="w-2 h-2 bg-radar-green rounded-full shadow-[0_0_8px_#00FF9C]"
@@ -40,13 +43,13 @@ const TopBar: React.FC<TopBarProps> = ({ isMuted, toggleMute, isLowPower, toggle
         </div>
       </div>
 
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-2 sm:space-x-6">
         <div className="flex items-center space-x-2">
           <Clock size={14} />
           <span>{time.toLocaleTimeString([], { hour12: false })}</span>
         </div>
         
-        <div className="flex items-center space-x-4 border-l border-radar-green/20 pl-6">
+        <div className="flex items-center space-x-4 border-l border-radar-green/20 pl-2 sm:pl-6">
           <button 
             onClick={toggleLowPower}
             className={`hover:text-white transition-colors cursor-pointer flex items-center space-x-1 ${isLowPower ? 'text-white' : ''}`}

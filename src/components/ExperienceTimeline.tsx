@@ -131,7 +131,7 @@ const ExperienceTimeline: React.FC = () => {
             className="relative pl-8 border-l border-radar-green/20 group"
           >
             {/* Timeline Dot */}
-            <div className="absolute -left-[5px] top-0 w-2 h-2 bg-radar-green rounded-full shadow-[0_0_8px_#00FF9C] group-hover:scale-150 transition-transform" />
+            <div className="absolute -left-1.25 top-0 w-2 h-2 bg-radar-green rounded-full shadow-[0_0_8px_#00FF9C] group-hover:scale-150 transition-transform" />
             
             <div className="space-y-3">
               <div className="flex items-center justify-between">
