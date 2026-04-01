@@ -38,7 +38,8 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       case 'download resume':
         setHistory(prev => [...prev, 'Initiating secure document retrieval...', 'Resume download started.']);
         const link = document.createElement('a');
-        link.href = 'src\public\TayyabLatifResume.pdf';
+        const resumeUrl = new URL('/TayyabLatifResume.pdf', import.meta.url).href;
+        link.href = resumeUrl;
         link.download = 'Muhammad_Tayyab_Latif_Resume.pdf';
         link.target = '_blank';
         document.body.appendChild(link);
@@ -67,9 +68,9 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-200 flex items-center justify-center p-4 bg-bg-black/40 backdrop-blur-sm"
         >
-          <div className="w-full max-w-2xl h-[400px] bg-bg-black border border-radar-green/40 shadow-[0_0_30px_rgba(0,255,156,0.1)] flex flex-col font-mono">
+          <div className="w-full max-w-2xl h-100 bg-bg-black border border-radar-green/40 shadow-[0_0_30px_rgba(0,255,156,0.1)] flex flex-col font-mono">
             {/* Header */}
             <div className="h-8 bg-dim-green/30 border-b border-radar-green/20 flex items-center justify-between px-3 shrink-0">
               <div className="flex items-center space-x-2">
