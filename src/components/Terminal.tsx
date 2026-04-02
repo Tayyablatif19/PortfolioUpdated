@@ -37,14 +37,7 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
         break;
       case 'download resume':
         setHistory(prev => [...prev, 'Initiating secure document retrieval...', 'Resume download started.']);
-        const link = document.createElement('a');
-        const resumeUrl = new URL('/TayyabLatifResume.pdf', import.meta.url).href;
-        link.href = resumeUrl;
-        link.download = 'Muhammad_Tayyab_Latif_Resume.pdf';
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Note: Resume file not configured. Use GitHubLatif19 repositories for code samples.
         break;
       case 'clear':
         setHistory([]);

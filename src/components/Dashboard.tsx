@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { User, Briefcase, Code, Terminal as TerminalIcon, Mail, FileText, Award, ShieldAlert, Camera } from 'lucide-react';
+import { User, Briefcase, Code, Terminal as TerminalIcon, Mail, Award, ShieldAlert, Camera } from 'lucide-react';
 import Window from './Window';
 
 const pfp = new URL('../gallery/pfp.png', import.meta.url).href;
@@ -90,14 +90,6 @@ const Dashboard: React.FC<DashboardProps> = ({ isLowPower }) => {
                 <TerminalIcon size={18} className="text-radar-green/40 group-hover:text-radar-green" />
                 <span className="text-[10px] uppercase font-bold tracking-widest">Open Terminal</span>
               </button>
-              <a 
-                href="/resume.pdf" 
-                download="Muhammad_Tayyab_Latif_Resume.pdf"
-                className="w-full flex items-center space-x-4 p-3 rounded-sm hover:bg-radar-green/5 text-radar-green/60 transition-all group"
-              >
-                <FileText size={18} className="text-radar-green/40 group-hover:text-radar-green" />
-                <span className="text-[10px] uppercase font-bold tracking-widest">Download Resume</span>
-              </a>
             </div>
           </div>
 
