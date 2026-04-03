@@ -27,7 +27,6 @@ const Dashboard: React.FC<DashboardProps> = ({ isLowPower }) => {
       setActiveSection(null);
     } else {
       setActiveSection(section);
-      // Random alert chance
      if (!isLowPower && Math.random() > 0.7) {
         const newAlert = Math.random() > 0.5 ? "New decision node detected" : "System recalibrated";
         setAlerts(prev => [...prev, newAlert]);
@@ -47,10 +46,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isLowPower }) => {
 
   return (
     <div className="relative min-h-screen pt-20 pb-12 px-6 font-mono overflow-y-auto custom-scrollbar">
-      {/* Main Grid Layout */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
         
-        {/* Left Sidebar Menu */}
         <div className="md:col-span-3 space-y-4">
           <div className="glass-panel p-4 border border-radar-green/20 rounded-sm space-y-6">
             <div className="flex flex-col items-center space-y-2 pb-4 border-b border-radar-green/10">
@@ -93,7 +90,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isLowPower }) => {
             </div>
           </div>
 
-          {/* System Status Panel */}
+
           <div className="glass-panel p-4 border border-radar-green/20 rounded-sm space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-[9px] uppercase font-bold tracking-widest text-radar-green/40">System Load</span>
@@ -113,7 +110,6 @@ const Dashboard: React.FC<DashboardProps> = ({ isLowPower }) => {
           </div>
         </div>
 
-        {/* Main Content Area */}
         <div className="md:col-span-9 relative">
           <AnimatePresence mode="wait">
             {!activeSection ? (
@@ -161,10 +157,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isLowPower }) => {
         </div>
       </div>
 
-      {/* Terminal Modal */}
       <Terminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
 
-      {/* System Alerts Overlay */}
       <div className="fixed bottom-8 right-8 space-y-4 z-[300] pointer-events-none">
         <AnimatePresence>
           {alerts.map((alert, i) => (

@@ -52,7 +52,6 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       </div>
     </div>
 
-    {/* Hover Glow */}
     <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-radar-green/5 blur-3xl rounded-full group-hover:bg-radar-green/10 transition-all" />
   </motion.div>
 );

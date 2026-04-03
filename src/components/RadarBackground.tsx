@@ -8,10 +8,8 @@ interface RadarBackgroundProps {
 const RadarBackground: React.FC<RadarBackgroundProps> = ({ isLowPower }) => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-bg-black">
-      {/* Grid Overlay */}
       <div className="absolute inset-0 grid-overlay opacity-20"></div>
       
-      {/* Radar Sweep */}
       {!isLowPower && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vmax] h-[150vmax]">
           <motion.div 
@@ -25,7 +23,6 @@ const RadarBackground: React.FC<RadarBackgroundProps> = ({ isLowPower }) => {
         </div>
       )}
 
-      {/* Subtle Particles */}
       {!isLowPower && (
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
@@ -51,7 +48,6 @@ const RadarBackground: React.FC<RadarBackgroundProps> = ({ isLowPower }) => {
         </div>
       )}
 
-      {/* Scanline */}
       {!isLowPower && <div className="scanline"></div>}
     </div>
   );

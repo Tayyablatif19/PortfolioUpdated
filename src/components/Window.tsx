@@ -21,7 +21,6 @@ const Window: React.FC<WindowProps> = ({ title, isOpen, onClose, children, class
           className={`glass-panel glow-border rounded-sm overflow-hidden flex flex-col ${className}`}
           style={{ maxHeight: 'calc(100vh - 120px)' }}
         >
-          {/* Header */}
           <div className="h-8 bg-dim-green/30 border-b border-radar-green/20 flex items-center justify-between px-3 shrink-0">
             <div className="flex items-center space-x-2">
               <div className="w-1.5 h-1.5 bg-radar-green rounded-full animate-pulse" />
@@ -43,12 +42,10 @@ const Window: React.FC<WindowProps> = ({ title, isOpen, onClose, children, class
             </div>
           </div>
 
-          {/* Content */}
           <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
             {children}
           </div>
 
-          {/* Footer Decoration */}
           <div className="h-1 bg-radar-green/10 flex">
             <motion.div 
               className="h-full bg-radar-green"

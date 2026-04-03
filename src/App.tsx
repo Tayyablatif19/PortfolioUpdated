@@ -10,10 +10,8 @@ export default function App() {
   const [isMuted, setIsMuted] = useState(false);
   const [isLowPower, setIsLowPower] = useState(false);
 
-  // Sound effects (optional placeholder)
   const playSound = (type: 'click' | 'ping' | 'boot') => {
     if (isMuted) return;
-    // In a real app, we would play actual audio files here
     console.log(`Playing sound: ${type}`);
   };
 
@@ -47,7 +45,6 @@ export default function App() {
             />
             <Dashboard isLowPower={isLowPower} />
             
-            {/* Global Scanline Overlay */}
             {!isLowPower && (
               <div className="fixed inset-0 pointer-events-none z-500 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-size-[100%_2px,3px_100%]" />
             )}

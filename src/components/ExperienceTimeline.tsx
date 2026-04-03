@@ -51,21 +51,17 @@ const ExperienceTimeline: React.FC = () => {
 
   return (
     <div className="space-y-12 font-mono">
-      {/* Graph Visualization */}
       <div className="relative h-64 border-b border-l border-radar-green/20 p-4 bg-dim-green/5">
         <div className="absolute bottom-0 left-0 w-full h-full grid-overlay opacity-10 pointer-events-none" />
         
-        {/* Y-Axis Label */}
         <div className="absolute -left-12 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] text-radar-green/40 uppercase tracking-widest">
           Growth Index
         </div>
 
-        {/* X-Axis Label */}
         <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] text-radar-green/40 uppercase tracking-widest">
           Timeline (2021 - 2025)
         </div>
 
-        {/* SVG Graph */}
         <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
           <motion.path
             d="M 0 70 L 50 50 L 75 10 L 85 60 L 100 30"
@@ -77,7 +73,6 @@ const ExperienceTimeline: React.FC = () => {
             transition={{ duration: 2, ease: "easeInOut" }}
           />
           
-          {/* Data Points */}
           {[
             { x: 0, y: 70, log: logs[0] },
             { x: 75, y: 10, log: logs[1] },
@@ -97,12 +92,11 @@ const ExperienceTimeline: React.FC = () => {
             />
           ))}
           
-          {/* Intermediate Trend Points (Visual only) */}
+
           <motion.circle cx="50" cy="50" r="1" className="fill-radar-green/40" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.2 }} />
           <motion.circle cx="85" cy="60" r="1" className="fill-radar-green/40" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.8 }} />
         </svg>
 
-        {/* Tooltip */}
         <AnimatePresence>
           {selectedLog && (
             <motion.div
@@ -119,7 +113,6 @@ const ExperienceTimeline: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Mission Logs */}
       <div className="space-y-8">
         {logs.map((log, i) => (
           <motion.div 
@@ -130,7 +123,6 @@ const ExperienceTimeline: React.FC = () => {
             transition={{ delay: i * 0.2 }}
             className="relative pl-8 border-l border-radar-green/20 group"
           >
-            {/* Timeline Dot */}
             <div className="absolute -left-1.25 top-0 w-2 h-2 bg-radar-green rounded-full shadow-[0_0_8px_#00FF9C] group-hover:scale-150 transition-transform" />
             
             <div className="space-y-3">

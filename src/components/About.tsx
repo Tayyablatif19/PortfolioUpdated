@@ -11,7 +11,6 @@ const About: React.FC = () => {
           <div className="relative aspect-square border border-radar-green/30 p-2 group">
             <div className="absolute inset-0 border-2 border-radar-green/10 animate-pulse group-hover:border-radar-green/30 transition-colors" />
             <div className="w-full h-full bg-dim-green/20 overflow-hidden relative">
-              {/* Placeholder for Profile Image */}
               <img
                 src={pfp}
                 alt="Profile"

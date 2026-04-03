@@ -5,11 +5,11 @@ import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  const repoName = 'PortfolioUpdated'; // ✅ EXACT repo name (case-sensitive)
+  const repoName = 'PortfolioUpdated';
   const isProd = mode === 'production';
 
   return {
-    base: isProd ? `/${repoName}/` : '/', // ✅ FIXED BASE PATH
+    base: isProd ? `/${repoName}/` : '/',
 
     plugins: [react(), tailwindcss()],
 
@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
 
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './'), // cleaner
+        '@': path.resolve(__dirname, './'),
       },
     },
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Camera, Shield, Target, Eye } from 'lucide-react';
 
-// Import images
 const nust2021 = new URL('../gallery/nust2021.jpeg', import.meta.url).href;
 const paf1 = new URL('../gallery/paf1.jpeg', import.meta.url).href;
 const paf2 = new URL('../gallery/paf2.jpeg', import.meta.url).href;
@@ -69,7 +68,6 @@ const AssetCard: React.FC<{ asset: Asset; index: number }> = ({ asset, index }) 
       />
       <div className="absolute inset-0 bg-gradient-to-t from-bg-black/80 to-transparent" />
       
-      {/* Classification Badge */}
       <div className={`absolute top-2 right-2 px-2 py-0.5 text-[8px] font-bold tracking-widest border ${
         asset.classification === 'SECRET' ? 'border-red-500 text-red-500' : 
         asset.classification === 'CONFIDENTIAL' ? 'border-yellow-500 text-yellow-500' : 
@@ -91,7 +89,6 @@ const AssetCard: React.FC<{ asset: Asset; index: number }> = ({ asset, index }) 
       </p>
     </div>
 
-    {/* Scanline Overlay */}
     <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_2px]" />
   </motion.div>
 );

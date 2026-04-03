@@ -37,7 +37,6 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
         break;
       case 'download resume':
         setHistory(prev => [...prev, 'Initiating secure document retrieval...', 'Resume download started.']);
-        // Note: Resume file not configured. Use GitHubLatif19 repositories for code samples.
         break;
       case 'clear':
         setHistory([]);
@@ -64,7 +63,6 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
           className="fixed inset-0 z-200 flex items-center justify-center p-4 bg-bg-black/40 backdrop-blur-sm"
         >
           <div className="w-full max-w-2xl h-100 bg-bg-black border border-radar-green/40 shadow-[0_0_30px_rgba(0,255,156,0.1)] flex flex-col font-mono">
-            {/* Header */}
             <div className="h-8 bg-dim-green/30 border-b border-radar-green/20 flex items-center justify-between px-3 shrink-0">
               <div className="flex items-center space-x-2">
                 <TerminalIcon size={14} className="text-radar-green" />
@@ -77,7 +75,6 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* History */}
             <div 
               ref={scrollRef}
               className="flex-1 overflow-y-auto p-4 space-y-1 text-xs text-radar-green/80 custom-scrollbar"
@@ -89,7 +86,6 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
               ))}
             </div>
 
-            {/* Input */}
             <form onSubmit={handleCommand} className="p-4 border-t border-radar-green/20 flex items-center space-x-2">
               <span className="text-radar-green font-bold shrink-0">{">"}</span>
               <input 

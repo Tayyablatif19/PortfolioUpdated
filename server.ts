@@ -12,7 +12,6 @@ async function startServer() {
 
   app.use(express.json());
 
-  // API Routes
   app.post("/api/contact", (req, res) => {
     const { name, message } = req.body;
     console.log(`[SECURE TRANSMISSION RECEIVED]`);
@@ -20,7 +19,6 @@ async function startServer() {
     console.log(`Message: ${message}`);
     console.log(`Target: tayyab.bsaf25nbs@student.nust.edu.pk`);
     
-    // Simulate a secure processing delay
     setTimeout(() => {
       res.json({ 
         status: "SUCCESS", 
@@ -30,7 +28,6 @@ async function startServer() {
     }, 1500);
   });
 
-  // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
